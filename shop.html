@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GoITeens Shop</title>
+    <style>
+        body {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background-color: azure;
+        }
+        h1 {
+            color: green;
+            text-align: center;
+        }
+        h3 {
+            color: blueviolet;
+        }
+        .product-card {
+            background-color: beige;
+            border: 2px;
+            text-align: center;
+        }
+        .buy-button {
+            color: lightseagreen;
+            border: 1px;
+        }
+        .bue-button:hover {
+            background-color: lightsalmon;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to shop</h1>
+    {% for product in products %}
+    <div class="product-card">
+        <h3><a href="{% url 'product_detail' product.pk %}">{{ product.name }}</a></h3>
+        <p>Price: ${{ product.price }}</p>
+        <button class="buy-button">Buy now</button>
+    </div>
+    {% endfor %}
+</body>
+</html>

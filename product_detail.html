@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ product.name }} Details</title>
+    <style>
+        body {
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            color: darkgreen;
+            text-align: center;
+        }
+        .container {
+            max-width: 800px;
+            border-radius: 10px;
+        }
+        h1 {
+            color: green;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+        .price {
+            color: goldenrod;
+            font-size: medium;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>{{ product.name }}</h1>
+        {% if product.image %}
+            <img src="{{ product.image.url }}" alt="{{ product.name }}">
+        {% else %}
+            <p>No image for this product</p>
+        {% endif %}
+        <p class="price">Price: ${{ product.price }}</p>
+    </div>
+</body>
+</html>

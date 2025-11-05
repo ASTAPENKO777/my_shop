@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>All products</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        main {
+            display: flex;
+            gap: 20px;
+            padding: 20px;
+            align-items: flex-start;
+        }
+
+        section {
+            background: #fff;
+            border-radius: 6px;
+            padding: 16px;
+            box-shadow: 0 0 6px rgba(0,0,0,0.05);
+        }
+
+        /* left column (new arrivals) takes remaining space */
+        .left {
+            flex: 1 1 0%;
+        }
+
+        /* right column (best sellers) fixed width */
+        .right {
+            flex: 0 0 320px;
+        }
+
+        h2.section-title {
+            margin-bottom: 12px;
+            color: darkgreen;
+            font-size: 1.25rem;
+        }
+
+        ul.products {
+            list-style: none;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 12px;
+        }
+
+        li.product {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+
+        img.product-img {
+            width: 300px;
+            height: 300px;
+            object-fit: contain;
+            border-radius: 4px;
+            background: #f7f7f7;
+        }
+
+        .product-info h3 {
+            margin-bottom: 6px;
+            font-size: 1rem;
+        }
+
+        .product-info button {
+            margin-top: 6px;
+            padding: 6px 10px;
+            border: 1px solid #2b8a3e;
+            background: #2b8a3e;
+            color: #fff;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <section class="left">
+            <h2 class="section-title">New arrivals</h2>
+            <ul class="products">
+                <li class="product">
+                    <img class="product-img" src="static/product1.png" alt="Apple">
+                    <div class="product-info">
+                        <h3>Apple</h3>
+                        <button>Add to bin</button>
+                    </div>
+                </li>
+                <li class="product">
+                    <img class="product-img" src="static/product2.png" alt="Orange">
+                    <div class="product-info">
+                        <h3>Orange</h3>
+                        <button>Add to bin</button>
+                    </div>
+                </li>
+                <li class="product">
+                    <img class="product-img" src="static/product3.png" alt="Nuts">
+                    <div class="product-info">
+                        <h3>Nuts</h3>
+                        <button>Add to bin</button>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+        <section class="right">
+            <h2 class="section-title">Best sellers</h2>
+            <ul class="products">
+                <li class="product">
+                    <img class="product-img" src="static/product4.png" alt="Lemon">
+                    <div class="product-info">
+                        <h3>Lemon</h3>
+                        <button>Add to bin</button>
+                    </div>
+                </li>
+            </ul>
+        </section>
+    </main>
+</body>
+</html>
